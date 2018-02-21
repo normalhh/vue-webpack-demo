@@ -2,7 +2,7 @@
 	<div :class="['todo-item',todo.completed?'completed':'']">
 		<div class="checkboxWrapper theme2 smallCheckboxSize">
 			<input type="checkbox" id="finished-checkbox" v-model="todo.completed">
-			<label for="finished-checkbox">
+			<label id="checkbox-label" for="finished-checkbox">
 				<i>
 					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 				width="50px" height="50px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
@@ -54,12 +54,10 @@
 			line-height 1
 			transition color 0.4s
 
-	&.completed
-		label
-		color #d9d9d9
-		text-decoration line-through
+		&.completed
+			color #d9d9d9
+			text-decoration line-through
 
 	.destroy::before, .destroy::after
 		display: none
-
 </style>
