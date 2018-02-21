@@ -8,7 +8,8 @@
 		/>
 		<item :todo="todo"
 			v-for="todo in todos"
-		  :key="todo.id"/>
+		  :key="todo.id"
+		  @del="deleteTodo"/>
 		<tabs :filter="filter"/>
 	</section>
 </template>
@@ -37,6 +38,9 @@
 					completed: false
 				})
 				e.target.value = ''
+			},
+			deleteTodo(id) {
+				this.todos.splice(this.todos.findIndex(todo => todo.id === id), 1)
 			}
 		}
 	}
