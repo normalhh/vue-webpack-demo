@@ -28,7 +28,7 @@
 		},
 		data() {
 			return {
-				states: ['all', 'active', 'completed']
+				states: ['All', 'Active', 'Completed']
 			}
 		},
 		components: {},
@@ -39,8 +39,10 @@
 		},
 		methods: {
 			clearAllCompleted() {
+				this.$emit('clearAllCompleted')
 			},
 			toggleFilter(state) {
+				this.$emit('toggle', state)
 			}
 		}
 	}
@@ -85,10 +87,10 @@
 			padding 0px 10px
 			cursor pointer
 			border 1px solid rgba(175, 47, 47, 0)
-			&.actived {
-				border-color rgba(175, 47, 47, 0.4)
-				border-radius 5px
-			}
 		}
+	}
+	&.actived {
+		border-color rgba(175, 47, 47, 0.4)
+		border-radius 5px
 	}
 </style>
