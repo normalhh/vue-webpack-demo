@@ -6,7 +6,9 @@
 					 placeholder="请添加一个事项"
 					 @keyup.enter="addTodo"
 		/>
-		<item :todo="todo"/>
+		<item :todo="todo"
+			v-for="todo in todos"
+		  :key="todo.id"/>
 		<tabs :filter="filter"/>
 	</section>
 </template>
@@ -14,15 +16,12 @@
 <script>
 	import Item from './item.vue'
 	import Tabs from './tabs.vue'
+	let id = 0;
 
 	export default {
 		data() {
 			return {
-				todo: {
-					id:0,
-					content: 'this is todo',
-					completed: false
-				},
+				todos:[],
 				filter: 'All'
 			}
 		},
@@ -31,7 +30,13 @@
 			Tabs
 		},
 		methods: {
-			addTodo() {
+			addTodo(e) {
+				this.todos.unshift({
+					id: id++,
+					content: e.target.value.trim(),
+					completed: false
+				})
+				e.target.value = ''
 			}
 		}
 	}
