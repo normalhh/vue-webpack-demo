@@ -10,7 +10,7 @@
 			v-for="todo in todos"
 		  :key="todo.id"
 		  @del="deleteTodo"/>
-		<tabs :filter="filter"/>
+		<tabs :filter="filter" :todos="todos"/>
 	</section>
 </template>
 
