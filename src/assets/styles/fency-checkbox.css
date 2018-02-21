@@ -1,0 +1,45 @@
+/*------------------Checkbox----------------------*/
+.checkboxWrapper{
+	width: 100%;
+	display:inline-block;
+	vertical-align: middle/* you can replace with 'display:inline-block' if you want parent element inline */
+}
+
+.checkboxWrapper input[type="checkbox"] {
+	display: none;
+}
+
+.checkboxWrapper input[type="checkbox"] + label {
+	cursor: pointer;
+	display:block;
+}
+
+.checkboxWrapper input[type="checkbox"] + label i {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.checkboxWrapper input[type="checkbox"] + label path {
+	stroke-dashoffset: -189;
+	stroke: inherit;
+	stroke-dasharray: 189;
+	transition: all ease-in-out 0.5s;
+	-webkit-transition: all ease-in-out 0.5s;
+	-moz-transition: all ease-in-out 0.5s;
+	-ms-transition: all ease-in-out 0.5s;
+	-o-transition: all ease-in-out 0.5s;
+}
+
+.checkboxWrapper input[type="checkbox"]:checked + label path {
+	stroke-dashoffset: 0;
+}
+
+/* Emerald theme */
+.theme2{
+	stroke:#2ECC71;
+}
+
+.smallCheckboxSize.checkboxWrapper input[type="checkbox"] + label i svg{
+	width:30px;
+	height:30px;
+}
